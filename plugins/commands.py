@@ -22,11 +22,12 @@ BATCH_FILES = {}
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         buttons = [
-              [
-                  InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/filmfactorygroup1'),
-                  InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
-                  InlineKeyboardButton('ʀᴇᴘᴏ', url='https://t.me/Leomc_bot')
-         ]
+            [
+                InlineKeyboardButton('🤖 Updates', url=f"https://t.me/filmfactorygroup1"),
+            ],
+            [
+                InlineKeyboardButton('ℹ️ ʜᴇʟᴘ', url=f"https://t.me/{temp.U_NAME}?start=help"),
+            ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
@@ -43,13 +44,12 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('🛡️ 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🛡️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
+            InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/filmfactorygroup1'),
+             InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
+        ], [
             InlineKeyboardButton('♻️ʜᴇʟᴘ♻️', callback_data='help'),
             InlineKeyboardButton('♻️ᴀʙᴏᴜᴛ♻️', callback_data='about')
-        ], [
-             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/filmfactorygroup1'),
-             InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
-            InlineKeyboardButton('ʀᴇᴘᴏ', url='https://t.me/Leomc_bot')
-         ]]
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         #add emoji loading then run 1 sec and dlt
         m=await message.reply_text("ᴍʏ ɴᴀᴍᴇ ɪꜱ Eʟꜱᴀ") 
@@ -94,13 +94,12 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('🛡️ 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🛡️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
+            InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/filmfactorygroup1'),
+             InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
+        ], [
             InlineKeyboardButton('♻️ʜᴇʟᴘ♻️', callback_data='help'),
             InlineKeyboardButton('♻️ᴀʙᴏᴜᴛ♻️', callback_data='about')
-        ],[
-             InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs​', url='https://t.me/filmfactorygroup1'),
-             InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
-            InlineKeyboardButton('ʀᴇᴘᴏ', url='https://t.me/Leomc_bot')
-         ]]
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
