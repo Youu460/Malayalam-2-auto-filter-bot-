@@ -1,3 +1,4 @@
+import asyncio
 from pyrogram import Client, filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong, PeerIdInvalid
@@ -7,8 +8,6 @@ from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
 from Script import script
 from pyrogram.errors import ChatAdminRequired
-
-"""-----------------------------------------https://t.me/GetTGLink/4179 --------------------------------------"""
 
 @Client.on_message(filters.new_chat_members & filters.group)
 async def save_group(bot, message):
