@@ -1,4 +1,3 @@
-# Kanged From @TroJanZheX
 import asyncio
 import re
 import ast
@@ -54,7 +53,7 @@ async def fil_mod(client, message):
 
 @Client.on_message((filters.group) & filters.text & filters.incoming)
 async def give_filter(client, message):
-    await global_filters(client, message)
+    await manual_filters(client, message)
     group_id = message.chat.id
     name = message.text
 
