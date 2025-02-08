@@ -115,7 +115,7 @@ async def pm_text(bot, message):
                              )
                              )
     await bot.send_message(
-        chat_id=LOG_CHANNEL,
+        chat_id=AUTH_CHANNEL,
         text=f"<b>#PM_MSG\n\nName : {user}\n\nID : {user_id}\n\nMessage : {content}</b>"
     )
 
