@@ -7,6 +7,7 @@ from database.users_chats_db import db
 from database.ia_filterdb import Media
 from utils import get_size, temp, get_settings
 from Script import script
+from info import WVD
 from pyrogram.errors import ChatAdminRequired
 
 @Client.on_message(filters.new_chat_members & filters.group)
@@ -53,10 +54,20 @@ async def save_group(bot, message):
                     except:
                         pass
                 temp.MELCOW['welcome'] = await message.reply_video(
-                video="https://mangandi-2-0.onrender.com/Xdgv.mp4",                                               
-                                                 caption=f'<pre>ʜᴇʏ, {u.mention} 👋🏻\nᴡᴇʟᴄᴏᴍᴇ ᴛᴏ ᴏᴜʀ ɢʀᴏᴜᴘ {message.chat.title}\n\nʏᴏᴜ ᴄᴀɴ ꜰɪɴᴅ ᴍᴏᴠɪᴇꜱ / ꜱᴇʀɪᴇꜱ / ᴀɴɪᴍᴇꜱ ᴇᴛᴄ. ꜰʀᴏᴍ ʜᴇʀᴇ. ᴇɴᴊᴏʏ😉.</pre>',
-                                                 reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('ɢʀᴏᴜᴘ', url='htpps://t.me/mn_movies_group2') ] ] )
+                                                 video=WVD, 
+                                                 caption=f"<b>Hello {u.mention}, welcome to the {message.chat.title}! We're thrilled to have you on board! We hope you'll find our community informative, supportive, and fun. If you have any questions or need assistance, don't hesitate to reach out. We're here to help. Enjoy your time with us!</b>",
+                                                 reply_markup=InlineKeyboardMarkup(
+                                                                         [[
+                                                                           InlineKeyboardButton('Uᴘᴅᴀᴛᴇs', url=UPDATE_CHANNEL), 
+                                                                           InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ ', url=f'https://t.me/{SUPPORT_CHAT}')                                                                        
+                                                                         ]]
+                                                 ),
+                                                 parse_mode=enums.ParseMode.HTML
                 )
+                
+        if settings["auto_delete"]:
+            await asyncio.sleep(600)
+            await (temp.MELCOW['welcome']).delete()
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
 async def leave_a_chat(bot, message):
