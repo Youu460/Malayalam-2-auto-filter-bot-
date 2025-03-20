@@ -111,7 +111,7 @@ Total Members = <code>{}</code>
 Added By - {}
 """
     RESULT_TXT="""<blockquote> Hey,     </blockquote>
-<pre> ᴍʏ ɴᴀᴍᴇ ɪꜱ Eʟꜱᴀ </pre>
+
 <blockquote>Jᴜsᴛ Sᴇᴇ Wʜᴀᴛ I Found Fᴏʀ Yᴏᴜʀ Qᴜᴇʀʏ {} </blockquote>"""
 
     CUSTOM_FILE_CAPTION = """<pre>📂Fɪʟᴇɴᴀᴍᴇ : {file_name}
