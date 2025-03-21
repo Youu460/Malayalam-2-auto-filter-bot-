@@ -706,7 +706,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
 async def auto_filter(client, msg, spoll=False):
     if not spoll:
         message = msg
-        
         settings = await get_settings(message.chat.id)
         if message.text.startswith("/"): return  # ignore commands
         if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
@@ -749,6 +748,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
+    await search.delete()
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
@@ -763,13 +763,11 @@ async def auto_filter(client, msg, spoll=False):
             [InlineKeyboardButton(text="📃 1/1", callback_data="pages")]
         )
     cap = script.RESULT_TXT.format(search) #result for group
-    await search.message.delete()
     autodel = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(300)
     await autodel.message.delete()
 
     
-#SPELL CHECK RE EDITED BY GOUTHAMSER
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
