@@ -748,7 +748,7 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-    await msg.message.delete()
+    await msg.delete()
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
