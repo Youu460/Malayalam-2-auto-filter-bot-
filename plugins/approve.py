@@ -16,7 +16,7 @@ CONFIG = {
     "bot_username": "REXIESCATBOT",
     "main_channel_url": "https://t.me/mn_movies2",
     "ott_updates_channel_url": "https://t.me/new_ott_movies3",
-    "photo_url": "https://i.ibb.co/Q9Hm3Dg/175540848.jpg",  # Replace with your actual image URL
+    "photo_url": "https://i.ibb.co/fhsknnn/x.jpg",  # Replace with your actual image URL
     "welcome_message": "**{greeting} {name} 👻\n\nWelcome to {chat_name}! Your request has been approved.\n\nSend /start to know more.**",
     "greeting_messages": {
         'en': ['Good Morning', 'Good Afternoon', 'Good Evening'],
