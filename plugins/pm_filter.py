@@ -107,10 +107,10 @@ async def pm_text(bot, message):
     user = message.from_user.first_name
     user_id = message.from_user.id
     if content.startswith("/") or content.startswith("#"): return  # ignore commands and hashtags
-    await message.reply_text("<b>ʜᴇʏ 𝙱𝚛𝚘 😍 ,\n\n ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ <a href='https://t.me/CINEMAUNIVERSE13'>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ​👇</b>",
+    await message.reply_text("<b>ʜᴇʏ 𝙱𝚛𝚘 😍 ,\n\n ʏᴏᴜ ᴄᴀɴ'ᴛ ɢᴇᴛ ᴍᴏᴠɪᴇs ꜰʀᴏᴍ ʜᴇʀᴇ. ʀᴇǫᴜᴇsᴛ ᴏɴ ᴏᴜʀ <a href='https://t.me/+vaGyiQirUt4xNDFk'>ᴍᴏᴠɪᴇ ɢʀᴏᴜᴘ</a> ᴏʀ ᴄʟɪᴄᴋ ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ​👇</b>",
                              reply_markup=InlineKeyboardMarkup(
                                  [[
-                                     InlineKeyboardButton('📕 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ', url=f"https://t.me/CINEMAUNIVERSE13")
+                                     InlineKeyboardButton('📕 ʀᴇǫᴜᴇsᴛ ʜᴇʀᴇ', url=f"https://t.me/+vaGyiQirUt4xNDFk")
                                  ]]
                              )
                              )
