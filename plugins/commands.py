@@ -18,6 +18,12 @@ logger = logging.getLogger(__name__)
 
 BATCH_FILES = {}
 
+DELETE_TXT = """<b>ഇപ്പൊ അയച്ച് തരുന്ന Movie Files 10മിനിറ്റിൽ Delete ആകും. അതിന് മുമ്പ് അത് saved messages forward അക്കി വെച്ചോ.. 
+
+Please save the file to your saved messages, it will be deleted in 10.00 mins
+
+<blockquote>Forward ആക്കിയാൽ നിനക്ക് കൊള്ളാം 😌👍</blockquote></b>"""
+
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
@@ -251,12 +257,19 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    await client.send_cached_media(
+    ok = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
         )
+    replied = ok.id    
+    da = await message.reply(DELETE_TXT, reply_to_message_id=replied)
+    await asyncio.sleep(30)
+    await message.delete()
+    await da.delete()
+    await asyncio.sleep(230)
+    await ok.delete()
                     
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
