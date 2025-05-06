@@ -497,12 +497,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('🛡️ 𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽𝘀 🛡️', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton(f'ᴏᴛᴛ ᴜᴘᴅᴀᴛᴇs', url='https://t.me/filmfactorygroup1'),
-             InlineKeyboardButton(f'ᴍᴀɪɴ ᴄʜᴀɴɴᴇʟ', url='https://t.me/CINEMAUNIVERSE13'),
-        ], [
-            InlineKeyboardButton('♻️ʜᴇʟᴘ♻️', callback_data='help'),
-            InlineKeyboardButton('♻️ᴀʙᴏᴜᴛ♻️', callback_data='about')
+            
+            
+             
+        
+            
+            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
